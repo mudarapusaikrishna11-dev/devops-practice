@@ -1,0 +1,32 @@
+pipeline {
+agent any 
+stage {
+stage ('clone')
+{
+steps {
+echo 'cloning repository...'
+}
+}
+stage ('Run') {
+steps {
+sh 'docker stop myapp-container || true'
+sh 'docker rm myapp-container  || true'
+sh 'docker run -d -p 9090:80 --name myapp-container myapp'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+}
+}
+}
